@@ -8,7 +8,7 @@ const { validateJwtMiddleware } = require("../auth");
 const appointmentController = require("../controllers/appointment.controller")
 
 //post route to create an appointment (appointment registration)
-router.post("/:email/firstName/lastName/date", validateJwtMiddleware, appointmentController.createAppointment)
+router.post("/:email/firstName/lastName/appointmentDate", validateJwtMiddleware, appointmentController.createAppointment)
 
 //get route to return all appointments for 1 user (requires auth)
 router.get("/:email", validateJwtMiddleware, appointmentController.getAppointment)
