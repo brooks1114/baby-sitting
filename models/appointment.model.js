@@ -52,7 +52,7 @@ appointmentSchema.pre('save', function (next) {
 //Generate the model our code with interact with from the above schema
 //Models allow us to interact with the data inside our MongoDB collections
 //More info: https://mongoosejs.com/docs/models.html
-const User = mongoose.model('User', userSchema);
+const Appointment = mongoose.model('Appointment', appointmentSchema);
 
 //export our model
-module.exports = User;
+module.exports = Appointment;
