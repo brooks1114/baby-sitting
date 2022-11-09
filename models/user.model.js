@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt")
 
 //Create our schema using mongoose that contains the fields and their data types for our Users
 //More info: https://mongoosejs.com/docs/schematypes.html
+
 const userSchema = new mongoose.Schema({
     firstName: {
         type: String,
@@ -30,18 +31,19 @@ const userSchema = new mongoose.Schema({
         select: false
     },
     address: {
-        type: {
-            street: String,
-            city: String,
-            zip: Number
-        },
-        required: true,
-
+        street: String,
+        city: String,
+        zip: String
     },
     phoneNumber: {
-        type: Number,
-        required: true,
-        match: [/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im, "Invalid Phone Number"],
+        type: String,
+        required: true
+    },
+    registeredSitter: {
+        type: Boolean,
+    },
+    registeredFamily: {
+        type: Boolean,
     }
 })
 
