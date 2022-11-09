@@ -38,6 +38,61 @@ components:
           type: string
         email:
           type: string
+    Sitter:
+      additionalProperties: false
+      type: object
+      properties:
+        firstName:
+          type: string
+          minLength: 2
+        lastName:
+          type: string
+          minLength: 2
+        email:
+          type: string
+        neighborhood:
+          type: string
+        availability:
+          type: array
+        rating:
+          type: number
+        hourlyRate:
+          type: number
+        maxKidsWillingToWatch:
+          type: number
+      required:
+        - firstName
+        - lastName
+        - email
+        - neighborhood
+        - availability
+        - rating
+        - hourlyRate
+        - maxKidsWillingToWatch
+    SitterResponse:
+      additionalProperties: false
+      type: object
+      properties:
+        _id:
+          type: string
+        firstName:
+          type: string
+          minLength: 2
+        lastName:
+          type: string
+          minLength: 2
+        email:
+          type: string
+        neighborhood:
+          type: string
+        availability:
+          type: array
+        rating:
+          type: number
+        hourlyRate:
+          type: number
+        maxKidsWillingToWatch:
+          type: number
     Login:
       additionalProperties: false
       type: object
@@ -251,3 +306,66 @@ paths:
           $ref: '#/components/responses/401'
         '404':
           $ref: '#/components/responses/404'
+  /api/sitters:
+    get:
+      summary: Get a list of users
+      tags:
+        - Sitters
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: firstName
+          in: query
+          description: Get sitters with a specific first name (fuzzy, case insensitve)
+          required: false
+          schema:
+            firstName:
+            type: string
+        - name: lastName
+          in: query
+          description: Get sitters with a specific last name (fuzzy, case insensitve)
+          required: false
+          schema:
+            firstName:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      sitters:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/SitterResponse'
+        '400':
+          $ref: '#/components/responses/400'
+    post:
+      summary: Create a new sitter
+      operationId: createSitter
+      x-controller: sitters
+      tags:
+        - Sitters
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Sitter'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      user:
+                        $ref: '#/components/schemas/SitterResponse'
+        '400':
+          $ref: '#/components/responses/400'
+ 
