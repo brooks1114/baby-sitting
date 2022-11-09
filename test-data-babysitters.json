@@ -1,0 +1,35 @@
+{"firstName": "Megan",
+"lastName": "Lewis",
+"email": "Megan.Lewis02@libertymutual.com",
+"neighborhood": "Somerville",
+"availability": "",
+"rating": "5",
+"hourlyRate": "20",
+"maxKidsWillingToWatch": "4"}
+
+{"firstName": "Erik",
+"lastName": "Brooks",
+"email": "Erik.Brooks@libertymutual.com",
+"neighborhood": "Brighton",
+"availability": "",
+"rating": "5",
+"hourlyRate": "20",
+"maxKidsWillingToWatch": "2"}
+
+{"firstName": "Karla",
+"lastName": "Mays",
+"email": "Karla.Mays@libertymutual.com",
+"neighborhood": "Newton",
+"availability": "",
+"rating": "5",
+"hourlyRate": "30",
+"maxKidsWillingToWatch": "2"}
+
+{"firstName": "Your Favorite",
+"lastName": "Babysitter",
+"email": "your.favorite@babysitter.com",
+"neighborhood": "Worcester",
+"availability": "",
+"rating": "5",
+"hourlyRate": "35",
+"maxKidsWillingToWatch": "8"}
