@@ -7,16 +7,6 @@ const bcrypt = require("bcrypt")
 //More info: https://mongoosejs.com/docs/schematypes.html
 
 const userSchema = new mongoose.Schema({
-    firstName: {
-        type: String,
-        required: true,
-        minlength: 2
-    },
-    lastName: {
-        type: String,
-        required: true,
-        minlength: 2
-    },
     email: {
         type: String,
         required: true,
@@ -29,21 +19,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         select: false
-    },
-    address: {
-        street: String,
-        city: String,
-        zip: String
-    },
-    phoneNumber: {
-        type: String,
-        required: true
-    },
-    registeredSitter: {
-        type: Boolean,
-    },
-    registeredFamily: {
-        type: Boolean,
     }
 })
 
