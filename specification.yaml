@@ -363,6 +363,45 @@ paths:
           schema:
             firstName:
             type: string
+        - name: neighborhood
+          in: query
+          description: Get sitters in given neighborhoods (exact)
+          required: false
+          schema:
+            neighborhood:
+            type: array
+        - name: availability
+          in: query
+          description: Get sitters with specific availability (fuzzy, case insensitve)
+          required: false
+          schema:
+            availability:
+            type: array
+        - name: rating
+          in: query
+          description: Get sitters with a rating greater than or equal to given rating
+          required: false
+          schema:
+            rating:
+            type: number
+        - name: hourlyRate
+          in: query
+          description: Get sitters with an hourlyRate (fuzzy, case insensitve)
+          required: false
+          schema:
+            hourlyRate:
+            type: number
+        - name: maxKidsWillingToWatch
+          in: query
+          description: Get sitters with a specific maxKidsWillingToWatch (fuzzy, case insensitve)
+          required: false
+          schema:
+            maxKidsWillingToWatch:
+            type: number
+        - name: sort
+          in: query
+          description: how to sort
+          required: false
       responses:
         '200':
           description: OK
