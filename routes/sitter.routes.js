@@ -11,6 +11,6 @@ const sitterController = require("../controllers/sitter.controller")
 router.post("/", sitterController.createSitter)
 
 //get route to return all sitters (requires auth)
-router.get("/", validateJwtMiddleware, sitterController.getSitters)
+router.get("/", sitterController.getSitters)
 
 module.exports = router;
