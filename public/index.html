@@ -1,13 +1,54 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <title>Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ditch the Kids</title>
 </head>
 
 <body>
-  <h1>Express</h1>
-  <p>Welcome to Expressfsds</p>
+
+  <!-- //react app will show up in this div// -->
+  <div id="root"></div>
+
+  <!-- Include the React Library -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+  <!-- Include the React Dom Library -->
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <!-- Enables us to use JSX -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+
+    class Counter extends React.Component {}
+    
+      state = {
+        counter: 0
+      }
+
+      incrementButtonClicked = (event) => {
+        this.setState((state, props) => (
+
+          {
+            counter: state.counter + 1
+          }
+
+        ));
+
+      }
+      render() {
+        return (
+          <div className="Counter">
+          <buttononClick= {this.decrementButtonClicked}>-</button> {this.state.counter} <button onClick+{this.incrementButtonClicked}>+< /button>
+          </div>
+        )
+      }
+
+          <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity = "sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin = "anonymous" ></script>
 </body>
 
 </html>
