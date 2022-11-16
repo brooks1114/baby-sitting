@@ -3,8 +3,10 @@ info:
   title: Capstone BE Starter
   version: 1.0.0
 servers:
-  - url: http://localhost:5000
+  - url: http://https://capstonesitter.herokuapp.com/
     description: localhost
+  - url: http://localhost:5000
+    description: Heroku
 components:
   schemas:
     User:
