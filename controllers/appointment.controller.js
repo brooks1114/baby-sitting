@@ -19,7 +19,7 @@ const appointmentController = {
             //{email: some@email.com} is the current query which really mean find the user with that email
             //we use await here since this is an async process and we want the code to wait for this to finish before moving on to the next line of code
             //The user may have more than one appointment so find and return all appointments in query
-            let findAllAppointments = await Appointment.find({ email: userEmail })
+            let findAllAppointments = await Appointment.find({ email: userEmail }).populate("sitterInfo")
 
             //if we found the user, return that user otherwise return a 404
             if (findAllAppointments) {
