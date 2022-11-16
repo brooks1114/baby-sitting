@@ -32,7 +32,7 @@ const appointmentSchema = new mongoose.Schema({
     },
     appointmentStatus: {
         type: String,
-        enum: ['Accepted', 'Rejected', 'Pending'],
+        enum: ['Accepted', 'Declined', 'Pending'],
         default: 'Pending',
         required: true
     }
@@ -45,7 +45,6 @@ appointmentSchema.virtual('sitterInfo', {
     justOne: true
 
 });
-
 
 appointmentSchema.pre('save', function (next) {
     let user = this;
