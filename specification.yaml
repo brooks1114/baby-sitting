@@ -3,7 +3,7 @@ info:
   title: Capstone BE Starter
   version: 1.0.0
 servers:
-  - url: http://https://capstonesitter.herokuapp.com/
+  - url: https://capstonesitter.herokuapp.com/
     description: localhost
   - url: http://localhost:5000
     description: Heroku
