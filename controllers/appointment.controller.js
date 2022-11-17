@@ -16,12 +16,14 @@ const appointmentController = {
             const userEmail = req.params.email;
 
 
+
             //use our model to find the user that match a query.
             //{email: some@email.com} is the current query which really mean find the user with that email
             //we use await here since this is an async process and we want the code to wait for this to finish before moving on to the next line of code
             //The user may have more than one appointment so find and return all appointments in query
-            let findAllAppointments = await Appointment.find({ email: userEmail }).populate("sitterInfo")
+            let findAllAppointments = await Appointment.find({ familyEmail: userEmail }).populate("sitterInfo")
 
+            console.log(findAllAppointments)
             //if we found the user, return that user otherwise return a 404
             if (findAllAppointments) {
                 res.json(findAllAppointments)

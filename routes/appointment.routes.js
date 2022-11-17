@@ -11,10 +11,10 @@ const appointmentController = require("../controllers/appointment.controller")
 router.post("/:email", validateJwtMiddleware, appointmentController.createAppointment)
 
 //get route to return all appointments for 1 user (requires auth)
-router.get("/:email", appointmentController.getAppointment)
+router.get("/:email", validateJwtMiddleware, appointmentController.getAppointment)
 
-//get route to return all appointments for 1 user (requires auth)
-router.put("/:id", appointmentController.updateAppointment)
+//get route to update an appointments (requires auth)
+router.put("/:id", validateJwtMiddleware, appointmentController.updateAppointment)
 
 
 //TODO Delete?
