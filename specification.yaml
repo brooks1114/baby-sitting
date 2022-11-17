@@ -500,4 +500,38 @@ paths:
                         $ref: '#/components/schemas/AppointmentResponse'
         '400':
           $ref: '#/components/responses/400'
+  /api/appointments/{id}:
+    put:
+      summary: Update appointment
+      tags:
+        - Appointment
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            description: The id of the appointment
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: The appointment updates
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Appointment'              
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppointmentResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '404':
+          $ref: '#/components/responses/404'
   
