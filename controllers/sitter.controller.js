@@ -71,7 +71,6 @@ const sitterController = {
                 message: error.message,
                 statusCode: res.statusCode
             })
-
         }
     },
     //method to create a new sitter
