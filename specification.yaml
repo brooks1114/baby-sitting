@@ -99,37 +99,34 @@ components:
       additionalProperties: false
       type: object
       properties:
-        email:
+        sitterEmail:
           type: string
-        firstName:
+        familyEmail:
           type: string
-          minLength: 2
-        lastName:
-          type: string
-          minLength: 2
         appointmentDate:
           type: Date
+        appointmentDuration:
+          type: number
+        appointmentStatus:
+          type: string
       required:
-        - email
-        - firstName
-        - lastName
-        - appointmentDate
+        - appointmentStatus
     AppointmentResponse:
       additionalProperties: false
       type: object
       properties:
         _id:
           type: string
-        firstName:
+        sitterEmail:
           type: string
-          minLength: 2
-        lastName:
-          type: string
-          minLength: 2
-        email:
+        familyEmail:
           type: string
         appointmentDate:
           type: Date
+        appointmentDuration:
+          type: number
+        appointmentStatus:
+          type: string
     Login:
       additionalProperties: false
       type: object
@@ -345,7 +342,7 @@ paths:
           $ref: '#/components/responses/404'
   /api/sitters:
     get:
-      summary: Get a list of users
+      summary: Get a list of sitters
       tags:
         - Sitters
       security:
@@ -504,7 +501,7 @@ paths:
     put:
       summary: Update appointment
       tags:
-        - Appointment
+        - Appointments
       parameters:
         - in: path
           name: id
