@@ -25,10 +25,7 @@ const sitterController = {
 
         //if neighborhood filter appears in query parameters then modify the query to do an in list search
         if(req.query.neighborhood){
-            // May need this fix if Array from FE does not play nice
-            // const sp = req.query.neighborhood.split(", ")
-            // query.neighborhood = {$in:sp}
-            query.neighborhood = {$in:req.query.neighborhood}
+            query.neighborhood = {$in:JSON.parse(req.query.neighborhood)}
         }
 
         //if availability filter appears in query parameters then modify the query to do a fuzzy search
