@@ -342,7 +342,7 @@ paths:
           $ref: '#/components/responses/404'
   /api/sitters:
     get:
-      summary: Get a list of users
+      summary: Get a list of sitters
       tags:
         - Sitters
       security:
